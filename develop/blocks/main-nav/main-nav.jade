@@ -1,0 +1,9 @@
+- var enlinks = [{url: "", text: "Furniture"}, {url: "", text: "Lightning"}, {url: "", text: "Decor"}, {url: "", text: "New"}, {url: "", text: "Contact"}]
+
+mixin main-nav()
+    +b.NAV.main-nav
+        +e.UL.list
+            each link in enlinks
+                +e.LI.item
+                    +e.A.link(href="#{link.url}") #{link.text}
+                

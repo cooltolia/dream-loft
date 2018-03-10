@@ -1,0 +1,10 @@
+mixin main-header()
+    +b.HEADER.main-header
+        +e.inner
+            +e.A.logo&attributes(attributes)
+                img(src='images/logo.svg' width='95' alt='Dream-loft')
+            +e.navigation
+                +main-nav
+            +e.contacts
+                +e.tel +7(495) 955-55-55
+                +e.email market@dreamloft.ru
