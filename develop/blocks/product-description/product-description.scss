@@ -1,0 +1,64 @@
+.product-description {
+    width: 100%;
+
+    font-family: $roboto;
+}
+
+.product-description__title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.product-description__brand {
+    margin-bottom: 25px;
+
+    font-size: 18px;
+    font-style: italic;
+}
+
+.product-description__tab {
+    margin-bottom: 5px;
+}
+
+.product-description__price {
+    margin-bottom: 25px;
+
+    font-size: 25px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.product-description__button {
+    display: block;
+    width: 200px;
+    padding: 12px 15px 11px;
+
+    color: $lighttext;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+
+    background-color: $themecolor;
+
+    border: none;
+    outline: none;
+    border-radius: 25px;
+
+    transition: background-color 300ms ease;
+    
+    &:hover, 
+    &:focus {
+        color: $lighttext;
+        text-decoration: none;
+
+        background-color: darken($color: $themecolor, $amount: 10%);
+    }
+
+    &:active {
+        color: $lighttext;
+        text-decoration: none;
+
+        background-color: darken($color: $themecolor, $amount: 20%);
+    }
+}

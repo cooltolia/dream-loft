@@ -72,15 +72,25 @@
       });
     });
 
-    $('.index-catalog__grid').masonry({
+    (function() {
 
-        itemSelector: '.index-catalog__item',
+    
 
-        columnWidth: 300,
+            $('.index-catalog__grid').masonry({
 
-        gutter: 5,
+                itemSelector: '.index-catalog__item',
 
-    })
+                columnWidth: 300,
+
+                gutter: 5,
+
+            })
+
+    
+
+    
+
+    }());
 
     
     
@@ -212,6 +222,108 @@
     })(); */
 
     
+    $(":input").inputmask();
+
+    
+    
+
+    
+    
+
+    
+    (function() {
+
+    
+
+        $('.product-slider__main').slick({
+
+            slidesToShow: 1,
+
+            slidesToScroll: 1,
+
+            arrows: true,
+
+            fade: true,
+
+            asNavFor: '.product-slider__thumbs'
+
+        });
+
+    
+
+        $('.product-slider__thumbs').slick({
+
+            slidesToShow: 3,
+
+            slidesToScroll: 3,
+
+            asNavFor: '.product-slider__main',
+
+            dots: false,
+
+            arrows: false,
+
+            centerMode: true,
+
+            focusOnSelect: true
+
+        });
+
+    
+
+    }());
+
+    
+    (function() {
+
+    
+
+        var item = $('.product-tabs__tab'),
+
+            content = $('.product-tabs__content'),
+
+            activeItem = $('.product-tabs__tab.active'),
+
+            rel = activeItem.attr('rel');
+
+    
+
+        $('[data=' + rel + ']').show();
+
+    
+
+        item.on('click', function(){
+
+            var $this = $(this),
+
+                rel = $this.attr('rel')
+
+    
+
+            if($this.hasClass('active')) {
+
+                return;
+
+            }
+
+            else {
+
+                item.removeClass('active');
+
+                $this.addClass('active');
+
+                content.hide();
+
+                $('[data=' + rel + ']').show();
+
+            }
+
+        });
+
+    
+
+    }());
+
     
 
     

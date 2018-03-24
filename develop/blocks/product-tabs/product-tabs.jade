@@ -1,0 +1,31 @@
+mixin product-tabs()
+    +b.product-tabs
+        +e.tabs
+            +e.tab.active(rel='desc') Описание
+            +e.tab(rel='spec') Характеристики
+        +e.content.active(data='desc')
+            h3 Описание товара
+            p 
+                | Sleek, tailored, and timeless, this Sleek, tailored, and timeless chair is the furniture equivalent to the classic suit. Its streamlined shape is reminiscent of 1930s modernism, when comfort and style were one. The Tuxedo's elegant profile looks good dressed in any fabric.
+            h3 Основные преимущества
+            ul
+                li Sleek, tailored, and timeless
+                li Tuxedo's elegant profile
+                li furniture equivalent to the classic suit
+                li comfort and style were one
+            h3 Производитель и страна происхождения
+            p HOCHDORF Swiss Nutrition AG, Швейцария.
+        +e.content(data='spec')
+            table
+                tr  
+                td Внешний вид и конструкция
+                td lorem ipsum doperm bitum balun
+                tr  
+                td Цвет
+                td lorem ipsum doperm bitum balun
+                tr  
+                td Материал
+                td Чlorem ipsum doperm bitum balun
+                tr  
+                td Вес
+                td lorem ipsum doperm bitum balun
