@@ -18,4 +18,9 @@
         focusOnSelect: true
     });
 
+
+    $('.zoom').zoom({
+        
+    });
+
 }());
