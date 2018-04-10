@@ -13,8 +13,7 @@
 }
 
 .main-nav__item {
-    position: relative;
-    margin-right: 40px;
+    margin-right: 20px;
 
     &:last-child {
         margin-right: 0;
@@ -24,23 +23,58 @@
 .main-nav__link {
     position: relative;
     display: block;
-    padding: 5px;
     text-decoration: none;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     color: $darktext;
     transition: color 300ms ease;
     cursor: pointer;
     
-    &--active {
-        color: $themecolor;
-    }
-
-
     &:hover,
     &:active,
     &:focus {
         text-decoration: none;
-        color: $themecolor;
+        color: $darktext;
     }
+    
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        left: 0;
+        bottom: 0;
+
+        background-color: #acacac;
+    }
+}
+
+.main-nav__subnav {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    width: 100%;
+    padding: 75px 25px 0;
+
+    transition: transform 300ms ease;
+}
+
+.main-nav__sublist {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 15px;
+    background-color: #000;
+}
+
+.main-nav__sublink {
+    display: inline-block;
+    color: #fff;
+}
+
+.main-nav__item:hover .main-nav__subnav {
+    display: block;
+    transform: translateX(0);
 }

@@ -376,8 +376,7 @@ th {
   max-width: 1920px;
   padding: 25px 25px;
   margin: 0 auto;
-  background-image: url("../images/index-bg.jpg");
-  background-size: cover; }
+  background-color: transparent; }
 
 .index-catalog__heading {
   position: absolute;
@@ -442,6 +441,11 @@ th {
   max-width: 480px;
   padding: 0 10px; }
 
+@media (min-width: 481px) {
+  .inner {
+    max-width: 740px;
+    padding: 0 20px; } }
+
 @media (min-width: 768px) {
   .inner {
     max-width: 840px;
@@ -457,7 +461,7 @@ th {
   padding: 50px 25px 25px;
   margin: 0 auto;
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  color: #050505;
+  color: #000000;
   background-color: #cecbcb; }
 
 .main-footer__inner {
@@ -505,14 +509,13 @@ th {
 
 .main-header {
   width: 100%;
-  padding: 50px 25px 0;
+  padding: 10px 25px 10px;
   margin: 0 auto;
   font-family: Roboto, Helvetica, Arial, sans-serif;
-  color: #050505;
-  background-color: #cecbcb; }
+  color: #000000;
+  background-color: transparent; }
 
 .main-header__inner {
-  max-width: 1240px;
   margin: 0 auto;
   display: -webkit-box;
   display: -moz-box;
@@ -534,11 +537,13 @@ th {
           align-items: center; }
 
 .main-header__logo {
-  width: 150px;
-  height: 75px;
-  background-color: forestgreen;
-  margin-right: 25px;
-  margin-bottom: 25px; }
+  width: 250px;
+  height: 57px;
+  margin-right: 25px; }
+  .main-header__logo img {
+    display: block;
+    width: 100%;
+    max-width: 100%; }
 
 .main-header__navigation {
   width: auto;
@@ -546,8 +551,8 @@ th {
      -moz-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  margin-right: 25px;
-  margin-bottom: 25px; }
+  margin-right: 45px;
+  margin-left: auto; }
 
 .main-header__contacts {
   width: auto;
@@ -555,9 +560,11 @@ th {
      -moz-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
-  margin-bottom: 25px;
   font-size: 16px;
   text-align: center; }
+
+.main-header__tel {
+  font-size: 21px; }
 
 .main-nav {
   width: auto; }
@@ -586,28 +593,75 @@ th {
   list-style: none; }
 
 .main-nav__item {
-  position: relative;
-  margin-right: 40px; }
+  margin-right: 20px; }
   .main-nav__item:last-child {
     margin-right: 0; }
 
 .main-nav__link {
   position: relative;
   display: block;
-  padding: 5px;
   text-decoration: none;
-  font-size: 20px;
-  font-weight: 600;
-  color: #050505;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
   -webkit-transition: color 300ms ease;
   -moz-transition: color 300ms ease;
   transition: color 300ms ease;
   cursor: pointer; }
-  .main-nav__link--active {
-    color: #ff7200; }
   .main-nav__link:hover, .main-nav__link:active, .main-nav__link:focus {
     text-decoration: none;
-    color: #ff7200; }
+    color: #000000; }
+  .main-nav__link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: #acacac; }
+
+.main-nav__subnav {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  -webkit-transform: translateX(-100%);
+     -moz-transform: translateX(-100%);
+      -ms-transform: translateX(-100%);
+          transform: translateX(-100%);
+  width: 100%;
+  padding: 75px 25px 0;
+  -webkit-transition: -webkit-transform 300ms ease;
+  transition: -webkit-transform 300ms ease;
+  -moz-transition: transform 300ms ease, -moz-transform 300ms ease;
+  transition: transform 300ms ease;
+  transition: transform 300ms ease, -webkit-transform 300ms ease, -moz-transform 300ms ease; }
+
+.main-nav__sublist {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  padding: 15px;
+  background-color: #000; }
+
+.main-nav__sublink {
+  display: inline-block;
+  color: #fff; }
+
+.main-nav__item:hover .main-nav__subnav {
+  display: block;
+  -webkit-transform: translateX(0);
+     -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0); }
 
 .map__inner {
   height: 342px;
@@ -1082,5 +1136,9 @@ body.modal-open {
 
 html, body {
   height: 100%; }
+
+body {
+  background-image: url("../images/index-bg.jpg");
+  background-size: cover; }
 
 /*# sourceMappingURL=main.css.map */

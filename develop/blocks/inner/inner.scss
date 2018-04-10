@@ -7,11 +7,18 @@
     padding: 0 10px;
 }
 
+@media (min-width: 481px) {
+    .inner {
+        max-width: 740px;
+        padding: 0 20px;
+    }
+}
+
 @media #{$tablet} {
-   .inner {
-       max-width: 840px;
-       padding: 0 20px;
-   }
+    .inner {
+        max-width: 840px;
+        padding: 0 20px;
+    }
 }
 
 @media #{$desktop} {

@@ -1,15 +1,14 @@
 .main-header {
     width: 100%;
 
-    padding: 50px 25px 0;
+    padding: 10px 25px 10px;
     margin: 0 auto;
     font-family: $roboto;
     color: $darktext;
-    background-color: #cecbcb;
+    background-color: transparent;
 }
 
 .main-header__inner {
-    max-width: 1240px;
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
@@ -18,25 +17,32 @@
 }
 
 .main-header__logo {
-    width: 150px;
-    height: 75px;
-    background-color: forestgreen;
+    width: 250px;
+    height: 57px;
     margin-right: 25px;
-    margin-bottom: 25px;
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 .main-header__navigation {
     width: auto;
     flex: 0 0 auto;
-    margin-right: 25px;
-    margin-bottom: 25px;
+    margin-right: 45px;
+    margin-left: auto
 }
 
 .main-header__contacts {
     width: auto;
     flex: 0 0 auto;
-    margin-bottom: 25px;
 
     font-size: 16px;
     text-align: center;
+}
+
+.main-header__tel {
+    font-size: 21px;
 }
