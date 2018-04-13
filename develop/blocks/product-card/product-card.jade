@@ -1,0 +1,28 @@
+mixin product-card()
+    +b.product-card
+        +e.H2.title Magnificent chair
+        +e.block
+            +e.subtitle Дизайнер
+            +e.P.text.--highlight Charles & Ray Eames
+        +e.block
+            +e.subtitle Описание
+            +e.A.desc-trigger(href='#description') Развернуть описание
+        +e.block
+            +e.subtitle Материал
+            +e.P.text Кожа, дерево, сталь
+        +e.block
+            +e.subtitle Размеры
+            +e.table
+                table(cellspacing='0' cellpadding='0')
+                    tr
+                        td Высота:
+                        td 84 см
+                        td Ширина:
+                        td 84 см
+                    tr
+                        td Глубина:
+                        td 60 см
+                        td Вес:
+                        td 36 кг
+        +e.price 55 000 руб.
+

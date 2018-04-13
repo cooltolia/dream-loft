@@ -1,11 +1,12 @@
 .main-header {
     width: 100%;
 
-    padding: 10px 25px 10px;
+    padding: 10px 25px 15px;
     margin: 0 auto;
     font-family: $roboto;
     color: $darktext;
-    background-color: transparent;
+    background-color: rgba(#fff, 0.25);
+    border-bottom: 1px dashed #acacac;
 }
 
 .main-header__inner {

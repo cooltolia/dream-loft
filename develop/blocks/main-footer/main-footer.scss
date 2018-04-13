@@ -1,11 +1,12 @@
 .main-footer {
     width: 100%;
-    padding: 50px 25px 25px;
+    padding: 15px 25px;
     margin: 0 auto;
 
     font-family: $roboto;
     color: $darktext;
-    background-color: #cecbcb;
+    background-color: rgba(#fff, 0.25);
+    border-top: 1px dashed #acacac;
 }
 
 .main-footer__inner {
@@ -20,18 +21,46 @@
 
 .main-footer__socials {
     width: 50%;
-    flex: 1 1 auto
+    flex: 0 1 auto
 }
 
 .main-footer__contacts {
-    width: auto;
-    flex: 0 0 auto;
-    font-size: 16px;
-    text-align: center;
+    width: 50%;
+    flex: 0 1 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .main-footer__main-tel {
-    margin-bottom: 10px;
+    position: relative;
+    margin-right: 40px;
+    padding-left: 25px;
 
-    font-size: 20px;
+    font-size: 21px;
+    font-weight: 400;
+
+    &::after {
+        content: '';
+        position: absolute;
+        width: 19px;
+        height: 18px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        background-image: url('../images/phone.svg');
+    }
+}
+
+.main-footer__messenger-tel {
+    font-size: 21px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.main-footer__messenger-list {
+    font-size: 16px;
+    font-weight: 400;
 }
