@@ -14,7 +14,7 @@
     max-width: 1240px;
     margin: 0 auto;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -28,7 +28,7 @@
     width: 50%;
     flex: 0 1 auto;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     justify-content: flex-end;
     align-items: flex-start;
 }
@@ -51,6 +51,9 @@
         transform: translateY(-50%);
 
         background-image: url('../images/phone.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 }
 
@@ -63,4 +66,26 @@
 .main-footer__messenger-list {
     font-size: 16px;
     font-weight: 400;
+}
+
+@media (max-width: 480px) {
+    .main-footer__main-tel {
+        margin-right: 0;
+        padding-left: 5px;
+        font-size: 16px;
+        &::after {
+            width: 12px;
+            height: 13px;
+            left: -10px;
+        }
+    }
+
+    .main-footer__messenger-tel {
+        font-size: 16px;
+    }
+
+    .main-footer__messenger-list {
+        font-size: 13px;
+    }
+
 }

@@ -72,11 +72,70 @@
       });
     });
 
+    ;
+
+    (function () {
+
+    
+
+        var $mobileNav = $('.mobile-nav'),
+
+            $allSubMenus = $('.mobile-nav__submenu, .mobile-nav__thirdmenu');
+
+            
+
+            
+
+        $(".hamburger").click(function () {
+
+            /** hide all visible inner menus */
+
+            $allSubMenus.removeClass('active');
+
+            $allSubMenus.slideUp();
+
+    
+
+            $(this).toggleClass('active');
+
+            $mobileNav.toggleClass('active')
+
+    
+
+            if ($mobileNav.hasClass('active')) {
+
+                $mobileNav.fadeIn();
+
+            } else {
+
+                $mobileNav.fadeOut();
+
+            }
+
+        });
+
+    
+
+    })();
+
+    
+
+    
     (function() {
 
     
 
-            $('.index-catalog__grid').masonry({
+        var $grid = $('.index-catalog__grid').imagesLoaded(function () {
+
+            // init Masonry after all images have loaded
+
+            console.log('есть картинки');
+
+            if ($(window).width() < 480) return;
+
+    
+
+            $grid.masonry({
 
                 itemSelector: '.index-catalog__item',
 
@@ -84,16 +143,15 @@
 
                 gutter: 5,
 
-            })
+            });
 
-    
+        });
 
     
 
     }());
 
     
-    
 
     
     
@@ -103,6 +161,107 @@
 
     
     
+
+    
+    (function () {
+
+        /** main-nav scripts */
+
+    
+
+    
+
+        /** mobile-nav scripts */
+
+        var $mobileNav = $('.mobile-nav'),
+
+            $firstLevelLinks = $('.mobile-nav__link'),
+
+            $secondLevelLinks = $('.mobile-nav__sublink');
+
+    
+
+        $firstLevelLinks.each(function () {
+
+            if ($(this).next('ul').length > 0)
+
+                $(this).addClass('has-submenu');
+
+        })
+
+    
+
+        $firstLevelLinks.on('click', function (e) {
+
+            var $subMenu = $(this).next();
+
+    
+
+            if ($subMenu.length > 0) {
+
+                e.preventDefault();
+
+                e.stopPropagation()
+
+    
+
+                $subMenu.toggleClass('active');
+
+                $(this).addClass('has-submenu');
+
+                $(this).toggleClass('active');
+
+    
+
+                if ($subMenu.hasClass('active')) {
+
+                    $subMenu.slideDown();
+
+                } else {
+
+                    $subMenu.slideUp();
+
+                }
+
+            } else {
+
+                return;
+
+            }
+
+    
+
+        });
+
+    
+
+        $secondLevelLinks.on('click', function (e) {
+
+            e.preventDefault();
+
+            e.stopPropagation()
+
+            var $thirdMenu = $(this).next();
+
+            $thirdMenu.toggleClass('active')
+
+    
+
+    
+
+            if ($thirdMenu.hasClass('active')) {
+
+                $thirdMenu.slideDown();
+
+            } else {
+
+                $thirdMenu.slideUp();
+
+            }
+
+        });
+
+    })()
 
     
     /* ;(function(){
@@ -228,7 +387,61 @@
     
 
     
+    ;(function () {
+
     
+
+        var $hiding = $('.hiding, .showing'),
+
+            $trigger = $('a[href="#description"'),
+
+            $closeDesc = $('.product-page__description-text span');
+
+    
+
+        $trigger.on('click', function() {
+
+            $hiding.removeClass('hidden')
+
+            if ($hiding.hasClass('hiding')) {
+
+                // $hiding.toggle().toggle()
+
+                $hiding.removeClass('hiding');
+
+                $hiding.addClass('showing');
+
+                $trigger.text('Скрыть описание');
+
+            } else {
+
+                $hiding.removeClass('showing');
+
+                $hiding.addClass('hiding');
+
+                $trigger.text('Развернуть описание');
+
+            }
+
+        });
+
+    
+
+        $closeDesc.on('click', function(e) {
+
+            void $hiding[0].offsetWidth;
+
+            $hiding.addClass('hiding');
+
+            $hiding.removeClass('showing');
+
+            $trigger.text('Блаа описание');
+
+        });
+
+    
+
+    })();
 
     
     (function() {

@@ -2,7 +2,7 @@
     position: relative;
     font-family: $roboto;
     margin-top: 20px;
-    min-height: 80vh;
+    // min-height: 80vh;
 }
 
 .product-page__images {
@@ -49,38 +49,69 @@
 
     font-size: 14px;
     font-weight: 400;
-    font-weight: 18px;
-}
 
-@media (max-width: 1240px) {
+    span {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        padding: 5px;
+    }
 
-
-}
-
-@media (max-width: 768px) {
-   
+    p {
+        margin: 0;
+    }
 }
 
 @media (max-width: 480px) {
     .product-page__container {
-        width: 320px;
+        width: 100%;
+        max-width: 320px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .product-page__description-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .product-page__image {
+        width: 100%;
+    }
+
+    .product-page__description-text {
+        width: 100%;
+        max-width: 320px;
+        top: 10px;
+        left: 0;
+        padding: 15px;
+        color: #fff;
+        background-color: rgba(#000, 0.8);
+        font-size: 14px;
+        font-weight: 400;
     }
 }
 
-.animatable {
+.hidden {
     visibility: hidden;
-    animation-play-state: paused;
 }
 
-.animated {
+.hiding {
+    opacity: 0;
+    animation: bounceBack 500ms ease;
+    // animation-play-state: paused;
+}
+
+.showing {
     visibility: visible;
-    animation-duration: 500ms;
-    animation-play-state: running;
-    animation-timing-function: ease;
+    animation: bounceInLeft 500ms ease;
+    // animation-duration: 500ms;
+    // // animation-play-state: running;
+    // animation-timing-function: ease;
 }
 
 .bounceInLeft {
-    animation-name: bounceInLeft;
+    
 }
 
 @keyframes bounceInLeft {
@@ -97,5 +128,19 @@
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes bounceBack {
+    0% {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+    10% {
+        transform: translateX(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-800px);
     }
 }

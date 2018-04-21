@@ -22,3 +22,16 @@ mixin main-nav()
                                     each sublink in link.subnav
                                         +e.LI.subitem
                                             +e.A.sublink(href="#{sublink.url}") #{sublink.text}
+                                    
+mixin mobile-nav()
+    +b.NAV.mobile-nav
+        +e.UL.list
+            each link in links
+                +e.LI.item
+                    +e.A.link(href="#{link.url}") #{link.text}
+                    if (link.subnav)
+                        +e.UL.submenu
+                            each sublink in link.subnav
+                                +e.LI.subitem
+                                    +e.A.sublink(href="#{sublink.url}") #{sublink.text}
+                        

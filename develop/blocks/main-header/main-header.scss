@@ -47,3 +47,29 @@
 .main-header__tel {
     font-size: 21px;
 }
+
+.main-header__hamburger {
+    position: absolute;
+    top: 32px;
+    right: 25px;
+}
+
+@media (max-width: 480px) {
+    .main-header__logo {
+        width: 220px;
+    }
+
+    .main-header__contacts {
+        margin: 0 auto 0;
+    }
+
+    .main-header__navigation {
+        display: none;
+    }
+
+    .main-header__tel {
+        font-size: 16px;
+    }
+
+    
+}
